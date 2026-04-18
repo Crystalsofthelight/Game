@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Neon Trail</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="hud">
+      <div class="brand">
+        <span class="eyebrow">Arcade Prototype</span>
+        <h1>Neon Trail</h1>
+      </div>
+      <div class="stats">
+        <div class="panel">
+            <span>Best Score</span>
+            <strong id="best">0 pts</strong>
+        </div>
+        <div class="panel">
+          <span>Distance</span>
+          <strong id="distance">0 m</strong>
+        </div>
+          <div class="panel">
+            <span>Score</span>
+            <strong id="score">0 pts</strong>
+          </div>
+          <div class="panel">
+            <span>Spins Earned</span>
+            <strong id="spinsEarned">0</strong>
+          </div>
+          <div class="panel">
+            <span>Spins Left Today</span>
+            <strong id="spinsLeft">5</strong>
+          </div>
+          <div class="panel">
+            <span>Landing</span>
+            <strong id="landing">--</strong>
+          </div>
+          <div class="panel">
+            <span>Trick</span>
+            <strong id="trick">--</strong>
+          </div>
+        <div class="panel">
+          <span>Speed</span>
+          <strong id="speed">0 km/h</strong>
+        </div>
+        <div class="panel">
+            <span>Status</span>
+            <strong id="status">Cruising</strong>
+        </div>
+      </div>
+    </div>
+
+    <div class="help">
+      <span>Space / Mouse: throttle</span>
+      <span>W / Up: jump</span>
+      <span>A / D: tilt</span>
+      <span>Tap mobile controls to ride</span>
+      <span>R: instant restart</span>
+    </div>
+
+    <div class="overlay" id="startOverlay">
+      <div class="card">
+        <p class="tag">Neon Trail</p>
+        <h2>Stunt Through the Skyline</h2>
+        <p>
+          Hold throttle, rotate in the air, and land cleanly. Push score high enough to earn spins while keeping the rider safe.
+        </p>
+        <button id="startBtn" class="action">Start Run</button>
+      </div>
+    </div>
+
+    <div class="overlay hidden" id="crashOverlay">
+      <div class="card">
+        <p class="tag">Wipeout</p>
+        <h2 id="crashTitle">Hard Impact</h2>
+        <p id="runSummary">Run ended.</p>
+        <button id="retryBtn" class="action">Retry</button>
+      </div>
+    </div>
+
+    <div class="overlay hidden orientation-overlay" id="orientationOverlay">
+      <div class="card">
+        <p class="tag">Rotate Device</p>
+        <h2>Landscape Required</h2>
+        <p>Neon Trail plays best in horizontal phone orientation. Turn your device sideways to ride.</p>
+        <button id="requestLandscapeBtn" class="action">Try Landscape Mode</button>
+      </div>
+    </div>
+
+    <div class="touch-controls" id="touchControls" aria-label="Mobile controls">
+      <button data-control="left" aria-label="Tilt backward">Tilt Back</button>
+      <button data-control="accelerate" class="throttle" aria-label="Throttle">Throttle</button>
+      <button data-control="jump" class="jump" aria-label="Jump">Jump</button>
+      <button data-control="right" aria-label="Tilt forward">Tilt Front</button>
+    </div>
+
+    <canvas id="game"></canvas>
+
+    <script src="game.js"></script>
+  </body>
+</html>
